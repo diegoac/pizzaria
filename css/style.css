@@ -1,0 +1,261 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: "Berlin";
+	src: url("font/BRLNSR.TTF");
+}
+
+body {
+	font-family: "Berlin", "Tahoma";
+	text-align: center;color /*IE*/
+}
+
+#container{
+	width:800px;
+	border: solid 1px red;
+	margin: 0 auto;
+}
+
+#header {
+	background-image: url("../images/banner_header1.jpg");
+	height: 131px;
+	background-repeat: no-repeat;
+}
+
+#logo {
+	width: 320px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+/* BUSCA */
+#busca {
+	width: 490px;
+	float: right;
+	margin-top: 15px;
+}
+#busca #txt_busca {
+	background-color: #FFF;
+	border: solid 2px #000;
+	font-family: "Berlin";
+	font-size: 16px;
+
+}
+#busca #select_busca {
+	background-color: #FFF;
+	border: solid 2px #000;
+	font-family: "Berlin";
+	font-size: 16px;
+
+}
+#busca #bt_busca {
+	font-family: "Berlin";
+	background-color: #900;
+	color: #FFF;
+	border: solid 1px #FFF;
+}
+
+/* FIM BUSCA */
+
+/* MENU */
+#menu {
+	background-color: #900;
+	color: #FFF;
+	text-align: center;
+	margin-top: -0.6px;
+	padding: 0;
+}
+
+#menu ul li {
+	display: inline;
+	list-style: none;
+	margin: 5px;
+}
+
+#menu ul li a {
+	text-decoration: none;
+	color: #FFF;
+	padding: 2px 7px;
+	margin: 5px;
+}
+
+#menu ul li a:hover {
+	background-color: #FFF;
+	color: #900;
+}
+
+/*FIM MENU*/
+
+
+/*MENSAGEM LOGADO*/
+#logarCliente { width: 550px; float: right; text-align: right; padding-right: 5px; margin-top: 5px; }
+#logarCliente a {text-decoration: none; color: #900;}
+#erroLogar { color: #F4A149; padding: 0 5px;}
+
+/*FIM MENSAGEM LOGADO*/
+
+
+/* CONTEÚDO DO SITE */
+#content { clear: both; padding-top: 10px; }
+
+#destaques_semana { width: 270px; float: left; text-align: left;}
+#destaques_semana h1 {font-size: 22px;}
+#pizzas_amostra { width: 445px; float: right; text-align: left;}
+#pizzas_amostra h1 { font-size: 22px; color: #900;}
+.pizzas { width: 97px; height: 150px; float: left; display: block; padding-top: 10px; padding-left: 20px; border-bottom: dotted 1px #ccc;}
+.pizzas a { text-decoration: none; color: #900; font-size: 16px;}
+#fix { clear: both;}
+/* FIM CONTEÚDO */
+
+/* DETALHES */
+#detalhes{ text-align: left; width: 800px;}
+#detalhes h1{ font-size: 28px; color: #900;}
+#fotoPizzaDetalhes{ margin-top: 20px; width: 270px; float: left;}
+#detalhesPizza{ width: 500px; float: right; background-color: #F7F7F7; border: dotted 1px #ccc; padding: 8px;}
+#add_pedido{position: relative; width: 505px; float: right; font-size: 18px; background-color: #900; padding: 8px; color: #FFF; margin-bottom: 20px;}
+#add_pedido label{display: block; top: 20px;}
+#add_pedido #txt-qtd{width: 50px; border: solid 1px #900; font-size: 16px;}
+/* FIM DETALHES */
+
+/* EMPRESA */
+
+#empresa { text-align: left;}
+#empresa h1 { font-size: 22px; margin-bottom: 10px; color: #900;}
+#empresa p { margin-bottom: 20px;}
+
+/* FIM EMPRESA*/
+
+/* CADASTRO */
+
+#cadastro { width: 300px; text-align: left; margin: 0 auto; font-size: 20px; padding: 20px;}
+#cadastro h1 {font-size: 22px; margin-bottom: 10px; color: #900;}
+#cadastro label { display: block;}
+#cadastro label { display: block;}
+#cadastro .txt { width: 200px; height: 25px; border: solid 1px #F4F4F4; font-size: 18px;}
+
+/*#formularioCadastro label, error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+	color: #900;
+}*/
+/* CADASTRO: CUSTOM */
+form.cmxform label.error, label.error {
+    color: red;
+   /* font-style: italic;*/
+}
+/*****/
+
+/* FIM CADASTRO */
+
+/* FORM CADASTRO */
+
+.formularioCadastro {
+	width: 93%;
+	margin-left: 20px;
+}
+
+.formularioCadastro h2 {
+	font-size: 16px;
+}
+
+.formCadastro {
+	background-color: #ccc;
+	border: solid 1px #999;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.formCadastro .txt_field {
+	width: 300px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro .txt_field_menor {
+	width: 120px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro .txt_field_maior {
+	width: 500px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro select
+{
+	width: 300px;
+	border: solid 1px #900;
+}
+
+.bt_submit {
+	background-color: #900;
+	color: #FFF;
+	padding: 1px;
+}
+
+.formCadastro label {
+	display: block;
+}
+
+
+
+.mensagem {
+	background-color: green;
+	text-align: center;
+	margin-top: 10px;
+	padding: 3px;
+	color: #FFF;
+}
+
+.erro { background-color: #900; text-align: center; margin-top: 10px; padding: 3px; color: #FFF; }
+
+/* FIM FORM CADASTRO */
+
+/* CONTATO */
+
+#contato { width: 500px; float: left; text-align: left; margin: 0 auto; font-size: 20px; padding: 20px;}
+#contato h1 {font-size: 22px; margin-bottom: 10px; color: #900;}
+#contato label { display: block;}
+#contato label { display: block;}
+#contato .txt { width: 200px; height: 25px; border: solid 1px #F4F4F4; font-size: 18px;}
+#mensagem { width: 250px; height: 200px;}
+/* FIM CONTATO */
+
+/* AREA CLIENTE */
+
+#areaCliente{ font-family: "Berlin", "Tahoma";text-align: left}
+#areaCliente thead{background-color: #900; color: #FFF;}
+#areaCliente thead td{padding: 5px;}
+#areaCliente tfoot{background-color: #ABC6DD; color: #FFF;}
+#areaCliente tfoot td{background-color: #ABC6DD; color: #333;}
+#areaCliente .botaoCliente {background-color: #2B6FB6; color: #fff; padding: 3px; border: solid 1px #FFF; font-size: 14px;}
+#areaCliente a.botaoCliente {text-decoration: none; font-size: 14px;}
+#areaCliente #botaoFecharPedido {cursor: hand;}
+/* FIM AREA CLIENTE */
+
+/* FOOTER */
+#footer {
+	text-align: center;
+	font-size: 16px;
+	background-color: #900;
+	color: #FFF;
+	padding: 3px;
+	margin-top: 10px; 
+	clear: both;
+	padding: 7px;
+}
+/*FIM FOOTER*/
+

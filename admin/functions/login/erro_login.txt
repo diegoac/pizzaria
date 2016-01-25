@@ -1,0 +1,26 @@
+Erro ao logar com o login ::1 na data 06/01/16 06:26:40
+Erro ao logar com o login ::1 na data 06/01/16 06:26:41
+Erro ao logar com o login ::1 na data 06/01/16 06:26:41
+Erro ao logar com o login ::1 na data às 06/01/16 06:59:41
+Erro ao logar com o login ::1 na data às 06/01/16 07:04:17
+Erro ao logar com o login ::1 na data às 06/01/16 07:08:21
+Erro ao logar com o login ::1 na data às 06/01/16 07:18:56
+Erro ao logar com o login ::1 na data às 06/01/16 07:19:22
+Erro ao logar com o login ::1 na data às 06/01/16 10:33:15
+Erro ao logar com o login ::1 na data às 06/01/16 10:54:49
+Erro ao logar com o login ::1 na data às 06/01/16 10:55:15
+Erro ao logar com o login 127.0.0.1 na data às 07/01/16 03:55:59
+Erro ao logar com o login ::1 na data às 08/01/16 03:58:53
+Erro ao logar com o login ::1 na data às 08/01/16 07:11:13
+Erro ao logar com o login ::1 na data às 08/01/16 07:11:14
+Erro ao logar com o login ::1 na data às 08/01/16 07:11:16
+Erro ao logar com o login ::1 na data às 08/01/16 07:11:22
+Erro ao logar com o login ::1 na data às 08/01/16 07:11:33
+Erro ao logar com o login ::1 na data às 08/01/16 07:12:08
+Erro ao logar com o login ::1 na data às 08/01/16 07:12:08
+Erro ao logar com o login ::1 na data às 08/01/16 07:15:12
+Erro ao logar com o login ::1 na data às 08/01/16 07:15:15
+Erro ao logar com o login ::1 na data às 08/01/16 07:16:03
+Erro ao logar com o login ::1 na data às 08/01/16 07:16:05
+Erro ao logar com o login ::1 na data às 12/01/16 11:17:11
+Erro ao logar com o login ::1 na data às 12/01/16 11:17:31

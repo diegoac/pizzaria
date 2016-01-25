@@ -1,0 +1,323 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Trebuchet MS";
+	text-align: center; /* IE */
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+	/*border: solid 1px red;*/
+}
+
+/* HEADER */
+
+#header {
+	width: 800px;
+}
+
+#header #logo {
+	width: 400px;
+	float: left;
+	font-size: 30px;
+	color: #990000;
+	text-align: left;
+	/*border: solid 1px red;*/
+}
+
+#header #logo span#sublogo {
+	font-size: 16px;
+}
+
+#header #busca {
+	width: 290px;
+	float: right;
+	margin-top: ;
+	/*border: solid 1px red;*/
+}
+
+#header #busca #txt_busca {
+	width: 200px;
+	background-color: #900;
+	border: solid 1px;
+	text-align: left;
+	color: #FFF;
+	padding: 3px;
+	height: 25px;
+	font-weight: bold;
+}
+
+#header #busca #bt_busca {
+	background-color: #900;
+	border: solid 1px;
+	text-align: left;
+	color: #FFF;
+}
+
+#header #busca #lupa {
+	position: absolute;
+	float:right;
+	/*border: solid 1px red;*/
+	margin-top: 2px;
+}
+
+/* FIM HEADER */
+
+#footer {
+	clear: both;
+	text-align: center;
+	font-size: 12px;
+	color: #333;
+}
+
+
+/* CONTENT*/
+#content {
+	width: 800px;
+	clear: both;
+}
+
+#menuLateral {
+	text-decoration: none;
+	width: 150px;
+	text-align: left;
+	padding-top: 20px;
+	float: left;
+}
+
+#menuLateral ul {
+	list-style-type: none;
+}
+
+#menuLateral ul {
+	list-style-type: none;
+	font-size: 12px;
+}
+
+#menuLateral ul li{
+	padding: 3px 0;
+	border-bottom: solid 1px red;
+}
+
+#menuLateral ul li a{
+	text-decoration: none;
+}
+
+#contentAdmin {
+	width: 600px;
+	float: right;
+	padding-top: 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+#fix {
+	clear: both;
+}
+
+/* FIM CONTENT*/
+
+
+span#ultimoLogin {
+	color: #333;
+	font-weight: bold;
+}
+
+
+.obrigatorio {
+	margin-top: 10px;
+	color: #900;
+	font-weight: bold;
+}
+
+/* FORM CATEGORIA */
+
+.formularioCadastro {
+	width: 90%;
+	margin-left: 20px;
+}
+
+.formularioCadastro h2 {
+	font-size: 16px;
+}
+
+.form {
+	background-color: #ccc;
+	border: solid 1px #999;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.form .txt_field {
+	width: 300px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.form .bt_submit {
+	background-color: #900;
+	color: #FFF;
+	padding: 1px;
+}
+
+.mensagem { background-color: green; text-align: center; margin-top: 10px; padding: 3px; color: #FFF; }
+
+.erro {
+	background-color: #900;
+	text-align: center;
+	margin-top: 10px;
+	padding: 3px;
+	color: #FFF;
+}
+
+/* FIM FORM CATEGORIA */
+
+/* FORM CADASTRO */
+
+.formularioCadastro {
+	width: 93%;
+	margin-left: 20px;
+}
+
+.formularioCadastro h2 {
+	font-size: 16px;
+}
+
+.formCadastro {
+	background-color: #ccc;
+	border: solid 1px #999;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.formCadastro .txt_field {
+	width: 300px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro .txt_field_menor {
+	width: 120px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro .txt_field_maior {
+	width: 500px;
+	padding: 4px;
+	font-weight: bold;
+	height: 25px;
+	border: solid 1px #900;
+}
+
+.formCadastro select
+{
+	width: 300px;
+	border: solid 1px #900;
+}
+
+.bt_submit {
+	background-color: #900;
+	color: #FFF;
+	padding: 1px;
+}
+
+.formCadastro label {
+	display: block;
+}
+
+
+
+.mensagem {
+	background-color: green;
+	text-align: center;
+	margin-top: 10px;
+	padding: 3px;
+	color: #FFF;
+}
+
+.erro { background-color: #900; text-align: center; margin-top: 10px; padding: 3px; color: #FFF; }
+
+/* FIM FORM CADASTRO */
+
+
+/* FORM ALTERAR */
+
+.formularioAlterar { width: 800px;}
+
+.formularioAlterar .cabecalho{ text-align: center; font-size: 18px; font-weight: bold;}
+.formularioAlterar tr td{ border: solid 1px #ccc;}
+.formularioAlterar tr td.buttons{ width: 70px;}
+.formularioAlterar .input_text{width: 150px; border: solid 1px #900; }
+.formularioAlterar .input_text2{width: 200px; border: solid 1px #900;}
+.formularioAlterar .input_button { width: 100px; background-color: #900; color: #FFF;}
+.formularioAlterar .txt_field {/* border: transparent; */width: 150px; padding: 4px; font-weight: lighter; height: 25px; font-size: 18px; }
+.formularioAlterar .txt_field_menor { /*border: transparent;*/ width: 50px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioAlterar .txt_field_maior {/* border: transparent; */width: 180px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioAlterar .txt_field_completo {/* border: transparent; */width: 300px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioAlterar .select_field {width: 150px; font-weight: lighter; font-size: 18px; }
+
+
+/* FIM FORM ALTERAR */
+
+/* FORM DELETAR */
+
+.formularioDeletar { width: 800px;}
+
+.formularioDeletar .cabecalho{ text-align: center; font-size: 18px; font-weight: bold;}
+.formularioDeletar tr td{ border: solid 1px #ccc;}
+.formularioDeletar tr td.buttons{ width: 70px;}
+.formularioDeletar .input_text{width: 150px; border: solid 1px #900; }
+.formularioDeletar .input_text2{width: 200px; border: solid 1px #900;}
+.formularioDeletar .input_button { width: 100px; background-color: #900; color: #FFF;}
+.formularioDeletar .txt_field {/* border: transparent; */width: 150px; padding: 4px; font-weight: lighter; height: 25px; font-size: 18px; }
+.formularioDeletar .txt_field_menor { /*border: transparent;*/ width: 50px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioDeletar .txt_field_maior {/* border: transparent; */width: 180px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioDeletar .txt_field_completo {/* border: transparent; */width: 300px; padding: 4px; font-weight: bold; height: 25px;  }
+.formularioDeletar .select_field {width: 150px; font-weight: lighter; font-size: 18px; }
+
+
+/* FIM FORM DELETAR */
+
+/* FORM METAS */
+
+#metas {margin-top: 10px;}
+#metas label{display:block;}
+#resposta{margin-top: 20px;}
+
+/* FIM FORM METAS */
+
+/* BEM VINDO */
+
+#bemVindo {
+	font-size: 16px;
+	margin-top: 10px;
+	color: #900;
+}
+
+/* FIM BEM VINDO*/
+
+
+/* FOOTER */
+
+#footer {
+	text-align: center;
+	font-size: 12px;
+	color: #FFF;
+	background-color: #900;
+	margin-top:20px;
+	padding: 3px;
+}
+
+/* FIM FOOTER */
+
