@@ -51,24 +51,25 @@ function logarCliente($login, $password)
 		$logarCliente->bindValue(':login', $login);
 		$logarCliente->bindValue(':password', $password);
 		$logarCliente->execute();
-
+		$dados = '';
 		if($logarCliente->rowCount() == 1)
 		{
 			$dados = $logarCliente->fetch(PDO::FETCH_ASSOC);
-			$id = $dados['client_id'];
+			
+			// $_SESSION['logado_cliente'] = true;
+			// $_SESSION['nome_cliente'] = $dados['client_name'];
+			// $_SESSION['id_cliente'] = $dados['client_id'];
+			//$id = $dados['client_id'];
 			//var_dump($id);
 
-			$result = _write($pdo, $id, $login);
+			//$result = _write($pdo, $id, $login);
 
 			//var_dump($result);
 			// header('location:' . $url);
-			return true;
 		}
-		else
-		{
-			echo "Erro ao tentar abrir sessão";
-			return false;
-		}
+
+		return $dados;
+		
 	}catch(PDOException $e){
 		 	echo 'Erro: '.$e->getMessage();
 	}
@@ -233,25 +234,34 @@ function apresentaPaginaLogin()
 
 function logout()
 {
-	
-	if(isset($_SESSION['session_data']))
+	session_start();
+	if(isset($_SESSION['logado_cliente']))
 	{
-		$pdo = conectar();
-		$destruirSessao = _destroy($pdo, $_SESSION['session_id']);
-		// var_dump($destruirSessao);
-		// var_dump($_SESSION);
-		session_destroy($_SESSION['session_id']);
-		//header('location:http://localhost/treinos/php/siteCompleto/');
+		session_destroy();
+		header('location:http://localhost/treinos/php/siteCompleto/');
 	}
-	else
-	{
-		echo "sessão não definida";
-	}
-	// if(isset($_SESSION['logado_cliente']))
+
+
+	//$_SESSION['logado_cliente'] = false;
+	// if(isset($_SESSION['session_data']))
 	// {
-	// 	session_destroy();
-	// 	header('location:http://localhost/treinos/php/siteCompleto/');
+	// 	$pdo = conectar();
+	// 	$destruirSessao = _destroy($pdo, $_SESSION['session_id']);
+	// 	// var_dump($destruirSessao);
+	// 	var_dump($_SESSION);
+	// 	session_destroy($_SESSION['session_id']);
+	// 	// session_destroy($_SESSION['logado_cliente']);
+	// 	//header('location:http://localhost/treinos/php/siteCompleto/');
 	// }
+	// else
+	// {
+	// 	echo "sessão não definida";
+	// }
+	// // if(isset($_SESSION['logado_cliente']))
+	// // {
+	// // 	session_destroy();
+	// // 	header('location:http://localhost/treinos/php/siteCompleto/');
+	// // }
 }
 
 ?>

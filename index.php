@@ -66,6 +66,7 @@ if(isset($_SESSION))
 		
 		<script src="http://localhost/treinos/php/siteCompleto/js/jquery.mask.min.js"></script>
 		<script src="http://localhost/treinos/php/siteCompleto/js/maskInputs.js"></script>
+		<script src="http://localhost/treinos/php/siteCompleto/js/alterarDadosCliente.js"></script>
 
 		
 	</head>
@@ -95,6 +96,7 @@ if(isset($_SESSION))
 				    <li><a href="http://localhost/treinos/php/siteCompleto/cadastro">Cadastro</a></li>
 				    <li><a href="http://localhost/treinos/php/siteCompleto/contato">Contato</a></li>
 				    <li><a href="http://localhost/treinos/php/siteCompleto/pizzas">Pizzas</a></li>
+				    <li><a href="http://localhost/treinos/php/siteCompleto/login">Login</a></li>
 				    <li><a href="http://localhost/treinos/php/siteCompleto/logout">Logout</a></li>
 				    <!-- <li><a href="http://localhost/treinos/php/siteCompleto/login" id="login">Login</a></li> -->
 				</ul>

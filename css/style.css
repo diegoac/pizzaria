@@ -236,14 +236,30 @@ form.cmxform label.error, label.error {
 
 /* AREA CLIENTE */
 
-#areaCliente{ font-family: "Berlin", "Tahoma";text-align: left}
+#areaCliente{text-align: left}
 #areaCliente thead{background-color: #900; color: #FFF;}
 #areaCliente thead td{padding: 5px;}
 #areaCliente tfoot{background-color: #ABC6DD; color: #FFF;}
 #areaCliente tfoot td{background-color: #ABC6DD; color: #333;}
-#areaCliente .botaoCliente {background-color: #2B6FB6; color: #fff; padding: 3px; border: solid 1px #FFF; font-size: 14px;}
+#areaCliente .botaoCliente {font-family: "Berlin", "Tahoma"; background-color: #2B6FB6; color: #fff; padding: 3px; border: solid 1px #FFF; font-size: 14px;}
 #areaCliente a.botaoCliente {text-decoration: none; font-size: 14px;}
 #areaCliente #botaoFecharPedido {cursor: hand;}
+#areaCliente #relatorioPedidos {margin-top: 20px;}
+#areaCliente #alterarDadosCliente {margin-bottom: 20px;}
+
+#areaCliente #alterarDadosCliente a {background-color: #2B6FB6; color: #fff; padding: 3px; border: solid 1px #FFF; font-size: 20px;text-decoration: none; margin-top: 10px;}
+
+#areaCliente #alterarDadosCliente a:hover {text-decoration: underline;}
+#areaCliente #dadosCliente {width: 600px; display: none; position: absolute; top:5%; left: 30%;  background-color: #2B6FB6; color: #FFF; border: solid 2px #FFF; padding: 10px;}
+
+#areaCliente #dadosCliente h1 {font-size: 22px; margin-bottom: 10px; color: #900;}
+#areaCliente #dadosCliente label { display: block;}
+#areaCliente #dadosCliente label { display: block;}
+#areaCliente #dadosCliente .txt { width: 200px; height: 25px; border: solid 1px #F4F4F4; font-size: 18px;}
+#areaCliente #dadosCliente span.erro {color: #900; font-size: 14px;}
+#areaCliente #dadosCliente #erro { background-color: #900px; color: #FFF; padding: 10px; margin-top: 10px;}
+#areaCliente #dadosCliente #sucesso { background-color: #008000; color: #FFF; padding: 10px; margin-top: 10px;}
+#areaCliente #sairAlterar {width: 16px; float:right;}
 /* FIM AREA CLIENTE */
 
 /* FOOTER */
