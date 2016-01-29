@@ -2,6 +2,7 @@
 
 function cadastrarClient($dados = Array()){
 
+	var_dump($dados);
 	$pdo = conectar();
 	try {
 		$cadastrarClient = $pdo->prepare("INSERT INTO clients(

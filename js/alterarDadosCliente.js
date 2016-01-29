@@ -16,4 +16,8 @@ $(document).ready(function(){
 		alterarDados.html(id);
 		alterarDados.show();
 	});
+
+	$("#botaoSair").on('click', function(){
+		alterarDados.fadeOut('slow');
+	});
 });

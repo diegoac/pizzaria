@@ -1,8 +1,69 @@
 <div id="areaCliente">
 
 <?php
-session_start();
+	include_once 'functions/alterar/alterar.php';
+	session_start();
+	// Cadastrar cliente (via ajax)
+	if(isset($_POST['cadastrarClient']))
+	{
+		// ALTERAR DADOS DO CLIENTE (AlterarDadosCliente)
+		$name = obrigatorio("Nome", addslashes($_POST['name']));
+		$city = obrigatorio("Cidade", addslashes($_POST['city']));
+		$state = obrigatorio("Estado", addslashes($_POST['state']));
+		$neighborhood = obrigatorio("Bairro", addslashes($_POST['neighborhood']));
+		$cep = obrigatorio("CEP", addslashes($_POST['cep']));
+		validarCep($_POST['cep']);
+		$phone = obrigatorio("Telefone", addslashes($_POST['phone']));
+		validarTelefone($phone);
+		$cellphone = obrigatorio("Celular", addslashes($_POST['cellphone']));
+		//validarCelular($celular);
+		$email = obrigatorio("Email", addslashes($_POST['email']));
+		$address = obrigatorio("Endereço", addslashes($_POST['address']));
+		$birthday = obrigatorio("Nascimento", addslashes($_POST['birthday']));
+		$login = obrigatorio("Login", addslashes($_POST['login']));
+		$password = obrigatorio("Senha", addslashes($_POST['password']));
+		$id = $_POST['id'];
 
+		if(!isset($obrigatorio))
+		{
+			/* FORMATA DATA DE NASCIMENTO */
+			$birthday_aux = explode('/', $birthday);
+			$birthday = $birthday_aux[2] . "-" . $birthday_aux[1] . "-" . $birthday_aux[0];
+			/* FORMATA DATA DE NASCIMENTO */
+			$dados = array(
+				"name" => $name,
+				"city" => $city,
+				"state" => $state,
+				"neighborhood" => $neighborhood,
+				"cep" => $cep,
+				"phone" => $phone,
+				"cellphone" => $cellphone,
+				"email" => $email,
+				"address" => $address,
+				"birthday" => $birthday,
+				"login" => $login,
+				"password" => $password,
+				"id" => $id
+			);
+
+			if(alterarClient($dados))
+			{
+				$mensagem = "Dados alterados com sucesso!";
+			}
+			else
+			{
+				$erro = "Erro ao alterar os dados. Por favor, tente novamente.";
+			}
+		}
+		else
+		{
+			$erro = $obrigatorio;
+		}
+	}
+	
+
+
+// DELETAR PIZZAS E PEDIDOS
 if(substr_count($_GET['p'], '/') > 0)
 {
 	$pagina = explode('/', $_GET['p']);
@@ -79,7 +140,7 @@ if(isset($_SESSION['logado_cliente']))
 	
 	
 	?>
-	<!-- ALTERAR DADOS DO CLIENTE -->
+	<!-- ALTERAR DADOS DO CLIENTE (VIA AJAX: js/alterarDadosCliente.js -->
 	<div id="alterarDadosCliente">
 		<h2>Alterar dados:</h2>
 		<a href="#" id="alterar" name="<?php echo $_SESSION['id_cliente'];?>">Alterar meus dados</a>
@@ -107,32 +168,33 @@ if(isset($_SESSION['logado_cliente']))
 				</tr>
 			</thead>
 			<tbody>
-				<form action="" method="post"></form>
-				<?php
-				$total = "";
-				$d = new ArrayIterator($_SESSION['pedido']);
-				// var_dump($_SESSION);
-				//var_dump($d);
-				while($d->valid())
-				{
-					// var_dump($d->key());
-					//var_dump($d->current());
-					//echo $d->current();
-					$pedido = pegarPeloId('pizzas', 'pizza_id', $d->key());
-					//var_dump($pedido);
-				?>
-				<tr>
-					<td><?php echo $pedido['pizza_name'];?></td>
-					<td>R$ <?php echo number_format($pedido['pizza_price'],2,",","."); ?></td>
-					<td><?php echo $d->current();?></td>
-					<td>R$ <?php echo number_format($d->current() * $pedido['pizza_price'],2,",","."); ?></td>
-					<td align="center"><a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pizza/<?php echo $pedido['pizza_id']?>"><img src="http://localhost/treinos/php/siteCompleto/images/icons/delete.png" width="16" heigth="16"></a></td>
-				</tr>
-				<?php
-					$total += $d->current()*$pedido['pizza_price'];
-					$d->next();
-				}
-				?>
+				<form action="" method="post">
+					<?php
+					$total = "";
+					$d = new ArrayIterator($_SESSION['pedido']);
+					// var_dump($_SESSION);
+					//var_dump($d);
+					while($d->valid())
+					{
+						// var_dump($d->key());
+						//var_dump($d->current());
+						//echo $d->current();
+						$pedido = pegarPeloId('pizzas', 'pizza_id', $d->key());
+						//var_dump($pedido);
+					?>
+					<tr>
+						<td><?php echo $pedido['pizza_name'];?></td>
+						<td>R$ <?php echo number_format($pedido['pizza_price'],2,",","."); ?></td>
+						<td><?php echo $d->current();?></td>
+						<td>R$ <?php echo number_format($d->current() * $pedido['pizza_price'],2,",","."); ?></td>
+						<td align="center"><a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pizza/<?php echo $pedido['pizza_id']?>"><img src="http://localhost/treinos/php/siteCompleto/images/icons/delete.png" width="16" heigth="16"></a></td>
+					</tr>
+					<?php
+						$total += $d->current()*$pedido['pizza_price'];
+						$d->next();
+					}
+					?>
+				</form>
 			</tbody>
 			<tfoot>
 				<tr>
@@ -147,6 +209,25 @@ if(isset($_SESSION['logado_cliente']))
 			</tfoot>
 		</table>
 
+		<?php
+		if(isset($erro))
+		{
+			echo '<br /><p>Por favor, preencha os seguintes campos:</p><br />';
+			if(is_array($erro))
+			{
+				foreach ($erro as $err) {
+					if(!empty($err))
+					{
+						echo '<div class=erro>' . $err . '</div><br />';
+					}
+				}
+			}
+			else
+			{
+				echo $erro;
+			}
+		}
+			?>
 		<?php
 	}
 	else

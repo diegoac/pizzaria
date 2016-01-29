@@ -1,11 +1,7 @@
 <?php
 session_start();
 global $obrigatorio;
-if(isset($_SESSION))
-{
-	//$_SESSION = array();
-	//session_destroy();
-}
+
 if(isset($_POST['pedir']))
 {
 	// var_dump($_POST);
@@ -13,7 +9,7 @@ if(isset($_POST['pedir']))
 	if(isset($_SESSION['nome_cliente']))
 	{
 		//var_dump($_POST);
-		$qtd = obrigatorio('quantidade', trim($_POST['qtd']));
+		$qtd = trim($_POST['qtd']);
 		$id = $_POST['id'];
 		$pizza = $_POST['pizza'];
 
@@ -26,10 +22,6 @@ if(isset($_POST['pedir']))
 
 			if(empty($_SESSION['pedido'][$pizza]))
 			{
-
-				// echo "armazenando valor da quantidade de pizzas<br />";
-				// $_SESSION['pedido']['id'] = $id;
-				// $_SESSION['pedido']['name'] = $pizza;
 				$_SESSION['pedido'][$pizza] = $qtd;
 			}
 			else
@@ -54,6 +46,7 @@ if(isset($_POST['pedir']))
 	{
 		$erro = "Você precisa estar logado para fazer o pedido.";
 	}
+
 }
 
 
@@ -66,7 +59,10 @@ if(isset($_POST['pedir']))
 
 <div id="detalhes">
 <?php
-
+	if(!isset($_SESSION['logado_cliente']))
+	{
+		header('location:http://localhost/treinos/php/siteCompleto/login');
+	}
 	if(isset($_GET['p']))
 	{
 		$explodeUrl = explode('/', $_GET['p']);
@@ -126,7 +122,7 @@ if(isset($_POST['pedir']))
 			}
 
 		?>
-			<p>Pedidos dessa pizza: <?php echo isset($totalDaPizza)? $totalDaPizza : "0";	?>	</p>
+			<p>Pedidos dessa pizza: <?php echo !empty($_SESSION['pedido'][$pizzaEscolhida['pizza_id']]) ? $_SESSION['pedido'][$pizzaEscolhida['pizza_id']] : "0";	?>	</p>
 		</div>
 <?php
 	}
