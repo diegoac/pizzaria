@@ -156,59 +156,59 @@ if(isset($_SESSION['logado_cliente']))
 	if(!empty($_SESSION['pedido']))
 	{
 		?>
-
-		<table width="800" cellspacing="0">
-			<thead>
-				<tr>
-					<td>Nome</td>
-					<td>Preço</td>
-					<td>Quantidade</td>
-					<td>Subtotal</td>
-					<td>Excluir</td>
-				</tr>
-			</thead>
-			<tbody>
-				<form action="" method="post">
-					<?php
-					$total = "";
-					$d = new ArrayIterator($_SESSION['pedido']);
-					// var_dump($_SESSION);
-					//var_dump($d);
-					while($d->valid())
-					{
-						// var_dump($d->key());
-						//var_dump($d->current());
-						//echo $d->current();
-						$pedido = pegarPeloId('pizzas', 'pizza_id', $d->key());
-						//var_dump($pedido);
-					?>
+		<form action="http://localhost/treinos/php/siteCompleto/checkout" method="post">
+			<table width="800" cellspacing="0">
+				<thead>
 					<tr>
-						<td><?php echo $pedido['pizza_name'];?></td>
-						<td>R$ <?php echo number_format($pedido['pizza_price'],2,",","."); ?></td>
-						<td><?php echo $d->current();?></td>
-						<td>R$ <?php echo number_format($d->current() * $pedido['pizza_price'],2,",","."); ?></td>
-						<td align="center"><a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pizza/<?php echo $pedido['pizza_id']?>"><img src="http://localhost/treinos/php/siteCompleto/images/icons/delete.png" width="16" heigth="16"></a></td>
+						<td>Nome</td>
+						<td>Preço</td>
+						<td>Quantidade</td>
+						<td>Subtotal</td>
+						<td>Excluir</td>
 					</tr>
-					<?php
-						$total += $d->current()*$pedido['pizza_price'];
-						$d->next();
-					}
-					?>
-				</form>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>Total do pedido: R$ <?php echo $total;?></td>
-					<td colspan="1">
-						<input type="submit" name="fechar" id="botaoFecharPedido" value="Fechar pedidos" class="botaoCliente"></input>
-					</td>
-					<td colspan="2">
-						<a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pedido" class="botaoCliente">Limpar Pedido</a>
-					</td>
-				</tr>
-			</tfoot>
-		</table>
-
+				</thead>
+				<tbody>
+					
+						<?php
+						$total = "";
+						$d = new ArrayIterator($_SESSION['pedido']);
+						// var_dump($_SESSION);
+						//var_dump($d);
+						while($d->valid())
+						{
+							// var_dump($d->key());
+							//var_dump($d->current());
+							//echo $d->current();
+							$pedido = pegarPeloId('pizzas', 'pizza_id', $d->key());
+							//var_dump($pedido);
+						?>
+						<tr>
+							<td><?php echo $pedido['pizza_name'];?></td>
+							<td>R$ <?php echo number_format($pedido['pizza_price'],2,",","."); ?></td>
+							<td><?php echo $d->current();?></td>
+							<td>R$ <?php echo number_format($d->current() * $pedido['pizza_price'],2,",","."); ?></td>
+							<td align="center"><a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pizza/<?php echo $pedido['pizza_id']?>"><img src="http://localhost/treinos/php/siteCompleto/images/icons/delete.png" width="16" heigth="16"></a></td>
+						</tr>
+						<?php
+							$total += $d->current()*$pedido['pizza_price'];
+							$d->next();
+						}
+						?>
+					
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Total do pedido: R$ <?php echo $total;?></td>
+						<td colspan="1">
+							<input type="submit" name="fechar" id="botaoFecharPedido" value="Fechar pedidos" class="botaoCliente"></input>
+						</td>
+						<td colspan="2">
+							<a href="http://localhost/treinos/php/siteCompleto/clientes/deletar/pedido" class="botaoCliente">Limpar Pedido</a>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
 		<?php
 		if(isset($erro))
 		{

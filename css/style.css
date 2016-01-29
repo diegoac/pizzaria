@@ -224,6 +224,13 @@ form.cmxform label.error, label.error {
 
 /* FIM FORM CADASTRO */
 
+/* CHECKOUT */
+
+#cabecalho_pedido {font-size: 18px; color: #FFF; background-color: #900}
+.botaoCliente {font-family: "Berlin", "Tahoma"; background-color: #2B6FB6; color: #fff; padding: 3px; border: solid 1px #FFF; font-size: 14px;}
+/* CHECKOUT */
+
+
 /* CONTATO */
 
 #contato { width: 500px; float: left; text-align: left; margin: 0 auto; font-size: 20px; padding: 20px;}
